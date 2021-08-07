@@ -2,7 +2,7 @@
   "name": "sql-tutor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<github-username>.github.io/<project-repo>",
+  "homepage": "https://frankapiyo.github.io/sql-tutor",
   "scripts": {"postinstall": "./postinstall.sh",
     "sc": "shadow-cljs",
     "server": "shadow-cljs stop && shadow-cljs start",
@@ -18,7 +18,7 @@
     "format": "zprint-clj --hang -i \"./src/**/*.{clj,cljs,cljc,edn}\" -o ./ && zprint-clj -i \"./*.edn\" -o ./",
     "clean": "rimraf public/js",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d public/"
   },
   "devDependencies": {
     "@testing-library/dom": "^7.19.0",
