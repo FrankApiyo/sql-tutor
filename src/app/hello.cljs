@@ -1,17 +1,12 @@
 (ns app.hello
-  (:require [reagent.core :as r]))
-
-(defn click-counter [click-count]
-  [:div
-   "The atom " [:code "click-count"] " has value: "
-   @click-count ". "
-   [:input {:type "button" :value "Click me!"
-            :on-click #(swap! click-count inc)}]])
-
-(def click-count (r/atom 0))
+  (:require
+   [reagent.core :as r]
+   ["sql.js/dist/sql-wasm.js" :as sqljs]))
 
 (defn hello []
-  [:<>
-   [:p "Hello, sql-tutor is running!"]
-   [:p "Here's an example of using a component with state:"]
-   [click-counter click-count]])
+  (let [SQL (r/atom nil)]
+    (.then
+     (sqljs {:locateFile "http://localhost:3000/sql-wasm.wasm"})
+     #(reset! SQL %))
+    (fn []
+      [:h1 "SQL Tutorial"])))
