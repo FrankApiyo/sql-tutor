@@ -1,9 +1,9 @@
-(ns app.hello-cards
+(ns app.tutor-cards
   (:require [reagent.core :as r]
             [devcards.core :as dc :refer [defcard deftest]]
             [cljs.test :include-macros true :refer [is]]
             ["@testing-library/react" :refer [render cleanup fireEvent]]
-            [app.hello :refer [click-counter hello]]))
+            [app.tutor :refer [click-counter tutor]]))
 
 (defn testing-container
   "The container that should be used to render testing-library react components.
@@ -19,8 +19,8 @@
    
    The two 'cards' below show the two components in this app.")
 
-(defcard hello-card
-  (dc/reagent hello))
+(defcard tutor-card
+  (dc/reagent tutor))
 
 (defcard click-counter-card
   (dc/reagent click-counter)
@@ -35,9 +35,9 @@
    
    Tests will be ran outside the browser when you run the test command.")
 
-(deftest hello-tests-card
-  (let [tr (render (r/as-element [hello]) #js {:container (testing-container)})]
-    (is (.queryByText tr #"Hello") "Should say 'Hello'")
+(deftest tutor-tests-card
+  (let [tr (render (r/as-element [tutor]) #js {:container (testing-container)})]
+    (is (.queryByText tr #"tutor") "Should say 'tutor'")
     (cleanup)))
 
 (deftest click-counter-tests-card

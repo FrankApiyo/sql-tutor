@@ -1,9 +1,9 @@
-(ns app.hello
+(ns app.tutor
   (:require
    [reagent.core :as r]
    ["sql.js/dist/sql-wasm.js" :as sqljs]))
 
-(defn hello []
+(defn tutor []
   (let [SQL (r/atom nil)
         db (r/atom nil)
         query "CREATE TABLE employees(id integer,  name text,designation text,manager integer,hired_on date,salary  integer,commission float,dept integer);"]
