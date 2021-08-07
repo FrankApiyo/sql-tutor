@@ -1,1 +1,1 @@
-cp node_modules/sql.js/dist/sql-wasm.wasm public/
+cp node_modules/sql.js/dist/sql-wasm.wasm public/js/
